@@ -50,7 +50,7 @@ Purpose:
 
 Methods:
 - Max/Avg Pooling
-- Strided convolution (stride $\(>1)$) (common in modern CNNs)
+- Strided convolution (stride \> 1) (common in modern CNNs)
 
 ### 3.5 Head (task-specific output)
 - Classification: Global Average Pooling (GAP) + Linear
@@ -136,7 +136,7 @@ Learns offsets for sampling positions; better for geometric variations.
 
 ### 7.3 ResNet
 Core idea:
-$\(y = F(x) + x\)$
+$y = F(x) + x$
 
 Benefits:
 - Enables very deep networks
