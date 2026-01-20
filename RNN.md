@@ -5,15 +5,15 @@
 
 ---
 
-## 0) Two Orthogonal Axes
+## 0. Two Orthogonal Axes
 
-### A) Architecture
+### A. Architecture
 - Unidirectional (Vanilla / Forward)
 - Bidirectional (BiRNN)
 - Stacked / Deep RNN
 - Encoder–Decoder (Seq2Seq, often with Attention)
 
-### B) Cell (recurrent unit) types
+### B. Cell (recurrent unit) types
 - **Vanilla RNN cell**:
 
 $$
@@ -25,7 +25,7 @@ $$
 
 ---
 
-## 1) Vanilla RNN (Basic / Elman RNN, Unidirectional)
+## 1. Vanilla RNN (Basic / Elman RNN, Unidirectional)
 
 ### 1.1 Definition
 Processes a sequence from $1 \to T$; the state at time $t$ depends only on the past:
@@ -46,7 +46,7 @@ Typically $f=\tanh$ (classic) or ReLU (less common in basic RNNs).
 
 ---
 
-## 2) Bidirectional RNN (BiRNN / BiLSTM / BiGRU)
+## 2. Bidirectional RNN (BiRNN / BiLSTM / BiGRU)
 
 ### 2.1 Definition
 Runs two RNNs over the same sequence:
@@ -77,7 +77,7 @@ Not suitable for strict real-time/online settings.
 
 ---
 
-## 3) Stacked / Deep RNN
+## 3. Stacked / Deep RNN
 
 ### 3.1 Definition
 Multiple recurrent layers stacked vertically; layer $\ell$ receives the hidden sequence from layer $\ell-1$:
@@ -97,7 +97,7 @@ $$
 
 ---
 
-## 4) Encoder–Decoder RNN (Seq2Seq)
+## 4. Encoder–Decoder RNN (Seq2Seq)
 
 ### 4.1 Problem setting
 Maps an input sequence $x_{1:T}$ to an output sequence $y_{1:U}$ (lengths may differ), e.g. machine translation, summarization, dialogue generation, early attention-based ASR.
