@@ -22,19 +22,19 @@ These biases reduce parameters and improve generalization compared to plain MLPs
 ## 3. Structure
 
 ### 3.1 Convolution layer
-**Input**: \(X \in \mathbb{R}^{H \times W \times C_{in}}\)  
-**Kernel/weights**: \(W \in \mathbb{R}^{K_h \times K_w \times C_{in} \times C_{out}}\)  
-**Output**: \(Y \in \mathbb{R}^{H' \times W' \times C_{out}}\)
+**Input**: $\(X \in \mathbb{R}^{H \times W \times C_{in}}\)$  
+**Kernel/weights**: $\(W \in \mathbb{R}^{K_h \times K_w \times C_{in} \times C_{out}}\)$  
+**Output**: $\(Y \in \mathbb{R}^{H' \times W' \times C_{out}}\)$
 
 Computation:
-\(Y_{i,j,c}=\sum_{u,v}\sum_{d=1}^{C_{in}} W_{u,v,d,c}\,X_{i+u,j+v,d}+b_c\)
+$\(Y_{i,j,c}=\sum_{u,v}\sum_{d=1}^{C_{in}} W_{u,v,d,c}\,X_{i+u,j+v,d}+b_c\)$
 
 Notes:
 - Deep learning frameworks often implement **cross-correlation** (kernel not flipped), still called “convolution”.
 
 ### 3.2 Activation functions
 Adds nonlinearity.
-- ReLU: \(\phi(x)=\max(0,x)\)
+- ReLU: $\(\phi(x)=\max(0,x)\)$
 - GELU, LeakyReLU, etc.
 
 ### 3.3 Normalization
@@ -44,13 +44,13 @@ Common in CNNs to stabilize and accelerate training.
 
 ### 3.4 Downsampling
 Purpose:
-- Reduce spatial size \(H,W\) to save compute/memory
+- Reduce spatial size $\(H,W\)$ to save compute/memory
 - Increase receptive field
 - Add some translation invariance
 
 Methods:
 - Max/Avg Pooling
-- Strided convolution (stride \(>1\)) (common in modern CNNs)
+- Strided convolution (stride $\(>1)$) (common in modern CNNs)
 
 ### 3.5 Head (task-specific output)
 - Classification: Global Average Pooling (GAP) + Linear
@@ -62,19 +62,19 @@ Methods:
 ## 4. Convolution hyperparameters and output size
 
 ### 4.1 Kernel size (K)
-Common: \(3\times 3\), \(1\times 1\), sometimes larger (e.g., \(7\times 7\)).
+Common: $\(3\times 3\)$, $\(1\times 1\)$, sometimes larger (e.g., $\(7\times 7\)$).
 
 ### 4.2 Stride (S)
-- \(S=1\): usually keeps resolution (with padding)
-- \(S=2\): downsample by ~2
+- $\(S=1\)$: usually keeps resolution (with padding)
+- $\(S=2\)$: downsample by ~2
 
 ### 4.3 Padding (P)
 - "same" padding: output size roughly preserved
 - "valid" padding: no padding, output shrinks
 
 Output shape formula:
-\(H'=\left\lfloor \frac{H+2P-K_h}{S}\right\rfloor+1\),
-\(W'=\left\lfloor \frac{W+2P-K_w}{S}\right\rfloor+1\)
+$\(H'=\left\lfloor \frac{H+2P-K_h}{S}\right\rfloor+1\)$,
+$\(W'=\left\lfloor \frac{W+2P-K_w}{S}\right\rfloor+1\)$
 
 ### 4.4 Dilation (D)
 Increases receptive field without increasing parameters much (common in segmentation).
@@ -97,7 +97,7 @@ Intuition:
 ### 6.1 Standard Convolution
 Full spatial + channel mixing in one operation.
 
-### 6.2 Pointwise Convolution (\(1\times 1\))
+### 6.2 Pointwise Convolution (*1 × 1*)
 - Mixes channels only
 - Used for bottlenecks, channel expansion/reduction, feature fusion
 
@@ -109,7 +109,7 @@ Channels split into groups; each group convolved separately.
 ### 6.4 Depthwise Separable Convolution
 Factorizes standard conv into:
 1) **Depthwise**: per-channel spatial convolution  
-2) **Pointwise**: \(1\times 1\) channel mixing  
+2) **Pointwise**: $\(1\times 1\)$ channel mixing  
 Used in MobileNet; huge efficiency gain.
 
 ### 6.5 Dilated (Atrous) Convolution
@@ -127,7 +127,7 @@ Learns offsets for sampling positions; better for geometric variations.
 ## 7. Backbone Families
 
 ### 7.1 VGG-style
-- Many stacked \(3\times 3\) convs + pooling
+- Many stacked $\(3\times 3\)$ convs + pooling
 - Simple but heavy (lots of params)
 
 ### 7.2 Inception-style
@@ -136,7 +136,7 @@ Learns offsets for sampling positions; better for geometric variations.
 
 ### 7.3 ResNet
 Core idea:
-\(y = F(x) + x\)
+$\(y = F(x) + x\)$
 
 Benefits:
 - Enables very deep networks
@@ -198,12 +198,12 @@ Upsampling and reconstruction:
 
 ### 9.3 Compute / memory considerations
 Compute roughly scales with:
-\(H \cdot W \cdot K_h \cdot K_w \cdot C_{in} \cdot C_{out}\)
+$\(H \cdot W \cdot K_h \cdot K_w \cdot C_{in} \cdot C_{out}\)$
 
 Common speedups:
 - Reduce resolution earlier (stride/pooling)
 - Use separable/group conv
-- Bottleneck designs (\(1\times 1\) reduce -> \(3\times 3\) -> \(1\times 1\) expand)
+- Bottleneck designs $(\(1\times 1\) reduce -> \(3\times 3\) -> \(1\times 1\) expand)$
 - Quantization / pruning for deployment
 
 ---
