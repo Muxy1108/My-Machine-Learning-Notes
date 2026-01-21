@@ -62,7 +62,7 @@ Methods:
 ## 4. Convolution hyperparameters and output size
 
 ### 4.1 Kernel size (K)
-Common: $\(3\times 3\)$, $\(1\times 1\)$, sometimes larger (e.g., $\(7\times 7\)$).
+Common: $\(3\times 3\)$, $\(1\times 1\)$, sometimes larger (e.g.,  $\(7\times 7\)$ ).
 
 ### 4.2 Stride (S)
 - $\(S=1\)$: usually keeps resolution (with padding)
