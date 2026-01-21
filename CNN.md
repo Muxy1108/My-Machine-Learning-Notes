@@ -57,6 +57,14 @@ Methods:
 - Detection: bounding boxes + classes
 - Segmentation: per-pixel predictions (often needs upsampling/decoder)
 
+#### Upsampling
+Used to increase resolution.  
+Ways:
+- Interpolation + Conv
+- Transposed Convolution (Deconvolution)  
+- Unpooling
+
+
 ---
 
 ## 4. Convolution hyperparameters and output size
