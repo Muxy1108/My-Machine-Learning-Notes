@@ -1,5 +1,6 @@
-# Common RNN Categories
+# RNN
 
+Classification:  
 > by **Architecture**  
 > A separate orthogonal dimension is the **recurrent cell type** (Vanilla / LSTM / GRU), which can be combined with any architecture below.
 
