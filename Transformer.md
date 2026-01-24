@@ -178,7 +178,7 @@ Given decoder layer input $ Y \in (B,m,d_model) $ and encoder memory $C \in (B,n
 
 6. Add & Norm
 
-### 9.3 Decoder-only Variant(GPTs)
+### 9.3 Decoder-only Variant (GPTs)
 - remove cross-attention
 - keep masked self-attention + FFN per layer
 
@@ -200,12 +200,18 @@ Implementation pattern:
 ---
 
 ## 11. Output Projection, Softmax, and Weight Tying
-### 11.1 From Hidden States to Vocabulary Logits
+### 11.1 Output Projection
 Decoder output at each position is projected to vocabulary size:
 - logits shape: $(B,m,V)$
 - probabilities: softmax over the last dimension
 
-### 11.2 Common Weight Tying
+### 11.2 Softmax
+Convert logits into a valid probability distribution over the vocabulary for each position.
+For a single position, with logits vector $z \in (V)$:  
+$$p_i = \mathrm{softmax}(z)_i = \frac{e^{z_i}}{\sum_{j=1}^{V} e^{z_j}}$$
+
+
+### 11.3 Weight Tying
 A frequent design in classic Transformer:
 - share weights between input embedding matrices and the pre-softmax linear projection
 - sometimes scale embeddings by $\sqrt{d_model}$
