@@ -1,4 +1,4 @@
-# Transformer Workflow (Detailed Notes)
+# Transformer
 
 ## 0. Overview
 A Transformer processes a token sequence by:
