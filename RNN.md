@@ -153,27 +153,13 @@ LSTM maintains:
 This separation makes long-range credit assignment easier.
 
 ### 1.1 Equations
-Given input *x* at time *t*, previous states *h*_{t-1}, *c*_{t-1}:
-$$
-\[
-f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)
-\]
-\[
-i_t = \sigma(W_i [h_{t-1}, x_t] + b_i)
-\]
-\[
-\tilde{c}_t = \tanh(W_c [h_{t-1}, x_t] + b_c)
-\]
-\[
-c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t
-\]
-\[
-o_t = \sigma(W_o [h_{t-1}, x_t] + b_o)
-\]
-\[
-h_t = o_t \odot \tanh(c_t)
-\]
-$$
+Given input *x* at time *t*, previous states $*h*_{t-1}$, $*c*_{t-1}$:
+$$f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)$$
+$$i_t = \sigma(W_i [h_{t-1}, x_t] + b_i)$$
+$$\tilde{c}_t = \tanh(W_c [h_{t-1}, x_t] + b_c)$$
+$$c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t$$
+$$o_t = \sigma(W_o [h_{t-1}, x_t] + b_o)$$
+$$h_t = o_t \odot \tanh(c_t)$$
 
 Where:
 - *f* is the **forget gate**: how much old memory to keep
@@ -191,11 +177,7 @@ Where:
 ### 1.3 Long-term Dependency
 The update of *c* has an additive path:
 
-$$
-\[
-c_t = f_t \odot c_{t-1} + \text{(new write)}
-\]
-$$
+$$c_t = f_t \odot c_{t-1} + \text{(new write)}$$
 
 If *f* stays near 1, information (and gradients) can flow through many time steps with less attenuation than in vanilla RNN.
 
@@ -212,20 +194,10 @@ It uses two gates:
 
 ### 2.1 Equations
 
-$$
-\[
-z_t = \sigma(W_z [h_{t-1}, x_t] + b_z)
-\]
-\[
-r_t = \sigma(W_r [h_{t-1}, x_t] + b_r)
-\]
-\[
-\tilde{h}_t = \tanh(W_h [r_t \odot h_{t-1}, x_t] + b_h)
-\]
-\[
-h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t
-\]
-$$
+$$z_t = \sigma(W_z [h_{t-1}, x_t] + b_z)$$
+$$r_t = \sigma(W_r [h_{t-1}, x_t] + b_r)$$
+$$\tilde{h}_t = \tanh(W_h [r_t \odot h_{t-1}, x_t] + b_h)$$
+$$h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t$$
 
 Interpretation:
 - *z* controls the interpolation between old state and new candidate
@@ -236,4 +208,3 @@ Interpretation:
 - *z* ≈ 1: mostly replace by new candidate, fast adaptation
 - *r* ≈ 0: candidate ignores old state (useful at boundaries/topic shifts)
 - *r* ≈ 1: candidate fully uses old state
-
