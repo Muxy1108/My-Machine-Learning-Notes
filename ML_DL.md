@@ -57,7 +57,7 @@ $$\hat y \approx f_{\theta}(x)$$
 
 With a layered structure:
 
-$$f_{\theta}(x)=f^{(L)}\!\left(f^{(L-1)}\!\left(\cdotsf^{(1)}(x)\right)\right)$$
+$$f_{\theta}(x)=f^{(L)}\!\left(f^{(L-1)}\!\left(\cdots f^{(1)}(x)\right)\right)$$
 
 - Shallow layers: low-level patterns  
 - Deep layers: high-level semantic representations  
