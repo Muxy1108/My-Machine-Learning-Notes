@@ -123,29 +123,7 @@ Parameters are distributed across layers; interpretability is weaker and require
 - K-means Clustering
 - Principal Component Analysis (PCA)
 
----
-
-## 8. Practical Model Selection Guidelines
-
-- Structured tabular data:
-
-$$\text{GBDT / XGBoost / LightGBM}$$
-
-- Small datasets with interpretability requirements:
-
-$$\text{Linear or Logistic Regression}$$
-
-- Medium-sized nonlinear classification:
-
-$$\text{SVM with RBF kernel}$$
-
-- Images, speech, natural language:
-
-$$\text{Deep Neural Networks}$$
-
----
-
-## 9. Summary
+## 8. Summary
 
 Traditional ML relies on **human-designed features**, while DL learns features automatically.  
 
