@@ -29,9 +29,9 @@ This formulation applies to linear regression, logistic regression, neural netwo
 
 ---
 
-## 4. Difference I: Feature Engineering vs Representation Learning
+## 3. Difference I: Feature Engineering vs Representation Learning
 
-### 4.1 Traditional Machine Learning
+### 3.1 Traditional Machine Learning
 
 Features are manually designed:
 
@@ -49,7 +49,7 @@ Model performance strongly depends on feature quality.
 
 ---
 
-### 4.2 Deep Learning
+### 3.2 Deep Learning
 
 Deep learning learns features automatically in an end-to-end manner:
 
@@ -64,7 +64,7 @@ $$f_{\theta}(x)=f^{(L)}\!\left(f^{(L-1)}\!\left(\cdots f^{(1)}(x)\right)\right)$
 
 ---
 
-## 5. Difference II: Data Scale and Model Capacity
+## 4. Difference II: Data Scale and Model Capacity
 
 General empirical rule:
 
@@ -75,9 +75,9 @@ $$\text{Model capacity} \uparrow \;\Rightarrow\; \text{Data requirement} \uparro
 
 ---
 
-## 6. Difference III: Interpretability and Engineering Cost
+## 5. Difference III: Interpretability and Engineering Cost
 
-### Interpretability
+### 5.1 Interpretability
 
 Linear models:
 
@@ -93,7 +93,7 @@ Parameters are distributed across layers; interpretability is weaker and require
 
 ---
 
-### Engineering Cost
+### 5.2 Engineering Cost
 
 - **Traditional ML**
   - Fast training
@@ -107,9 +107,9 @@ Parameters are distributed across layers; interpretability is weaker and require
 
 ---
 
-## 7. Common Machine Learning Algorithms
+## 6. Common Machine Learning Algorithms
 
-### Supervised Learning
+### 6.1 Supervised Learning
 - Linear Regression
 - Logistic Regression
 - Support Vector Machines (SVM)
@@ -119,11 +119,11 @@ Parameters are distributed across layers; interpretability is weaker and require
 - Random Forests
 - Gradient Boosted Decision Trees (GBDT, XGBoost, LightGBM)
 
-### Unsupervised Learning
+### 6.2 Unsupervised Learning
 - K-means Clustering
 - Principal Component Analysis (PCA)
 
-## 8. Summary
+## 7. Summary
 
 Traditional ML relies on **human-designed features**, while DL learns features automatically.  
 
