@@ -2,9 +2,7 @@
 
 ## 1. Relationship 
 
-\[
-\text{AI} \supset \text{ML} \supset \text{Representation Learning} \supset \text{DL}
-\]
+$$\text{AI} \supset \text{ML} \supset \text{Representation Learning} \supset \text{DL}$$
 
 - **Machine Learning (ML)**: Learn patterns or decision rules from data.
 - **Deep Learning (DL)**: ML methods based on multi-layer neural networks that automatically learn representations.
@@ -17,34 +15,15 @@
 
 In supervised learning, many ML and DL models can be written as:
 
-\[
-\theta^{*}
-=
-\arg\min_{\theta}
-\frac{1}{N}
-\sum_{i=1}^{N}
-\ell\!\left(
-f_{\theta}(x_i),
-y_i
-\right)
-\]
+$$\theta^{*}=\arg\min_{\theta}\frac{1}{N}\sum_{i=1}^{N}\ell\!\left(f_{\theta}(x_i),y_i\right)$$
 
 Where:
 
-\[
-N
-\]
-Number of samples.
+$N$: Number of samples.
 
-\[
-\ell(\cdot)
-\]
-Loss function.
+$$\ell(\cdot)$$: Loss function.
 
-\[
-\theta^{*}
-\]
-Optimal parameters.
+$$\theta^{*}$$: Optimal parameters.
 
 This formulation applies to linear regression, logistic regression, neural networks, etc.
 
@@ -56,19 +35,15 @@ This formulation applies to linear regression, logistic regression, neural netwo
 
 Features are manually designed:
 
-\[
-\hat y \approx g\!\left(w^{\top}\phi(x)\right)
-\]
+$$\hat y \approx g\!\left(w^{\top}\phi(x)\right)$$
 
-- \(\phi(x)\): hand-crafted feature mapping  
-- \(w\): model parameters  
-- \(g(\cdot)\): classifier or regressor  
+- $\phi(x)$: hand-crafted feature mapping  
+- $w$: model parameters  
+- $g(\cdot)$: classifier or regressor  
 
 Pipeline:
 
-\[
-x \rightarrow \phi(x) \rightarrow \text{ML model} \rightarrow \hat y
-\]
+$$x \rightarrow \phi(x) \rightarrow \text{ML model} \rightarrow \hat y$$
 
 Model performance strongly depends on feature quality.
 
@@ -78,22 +53,11 @@ Model performance strongly depends on feature quality.
 
 Deep learning learns features automatically in an end-to-end manner:
 
-\[
-\hat y \approx f_{\theta}(x)
-\]
+$$\hat y \approx f_{\theta}(x)$$
 
 With a layered structure:
 
-\[
-f_{\theta}(x)
-=
-f^{(L)}\!\left(
-f^{(L-1)}\!\left(
-\cdots
-f^{(1)}(x)
-\right)
-\right)
-\]
+$$f_{\theta}(x)=f^{(L)}\!\left(f^{(L-1)}\!\left(\cdotsf^{(1)}(x)\right)\right)$$
 
 - Shallow layers: low-level patterns  
 - Deep layers: high-level semantic representations  
@@ -104,9 +68,7 @@ f^{(1)}(x)
 
 General empirical rule:
 
-\[
-\text{Model capacity} \uparrow \;\Rightarrow\; \text{Data requirement} \uparrow
-\]
+$$\text{Model capacity} \uparrow \;\Rightarrow\; \text{Data requirement} \uparrow $$
 
 - Small datasets: traditional ML is often more stable.
 - Large-scale datasets: deep learning usually achieves higher performance.
@@ -119,17 +81,13 @@ General empirical rule:
 
 Linear models:
 
-\[
-\hat y = w^{\top}x
-\]
+$$\hat y = w^{\top}x$$
 
 Parameters directly reflect feature importance.
 
 Deep models:
 
-\[
-\hat y = f_{\theta}(x)
-\]
+$$\hat y = f_{\theta}(x)$$
 
 Parameters are distributed across layers; interpretability is weaker and requires auxiliary methods.
 
@@ -170,24 +128,20 @@ Parameters are distributed across layers; interpretability is weaker and require
 ## 8. Practical Model Selection Guidelines
 
 - Structured tabular data:
-\[
-\text{GBDT / XGBoost / LightGBM}
-\]
+
+$$\text{GBDT / XGBoost / LightGBM}$$
 
 - Small datasets with interpretability requirements:
-\[
-\text{Linear or Logistic Regression}
-\]
+
+$$\text{Linear or Logistic Regression}$$
 
 - Medium-sized nonlinear classification:
-\[
-\text{SVM with RBF kernel}
-\]
+
+$$\text{SVM with RBF kernel}$$
 
 - Images, speech, natural language:
-\[
-\text{Deep Neural Networks}
-\]
+
+$$\text{Deep Neural Networks}$$
 
 ---
 
