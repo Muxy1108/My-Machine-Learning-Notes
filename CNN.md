@@ -34,8 +34,10 @@ Notes:
 
 ### 3.2 Activation functions
 Adds nonlinearity.
-- ReLU: $\(\phi(x)=\max(0,x)\)$
-- GELU, LeakyReLU, etc.
+
+- *Sigmoid,Tanh*
+- ReLU: $\mathrm{ReLU}(x)=\max(0,x)\$
+- GELU：$\mathrm{GELU}(x)=x\,\Phi(x)$
 
 ### 3.3 Normalization
 Common in CNNs to stabilize and accelerate training.
