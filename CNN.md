@@ -196,7 +196,7 @@ Upsampling and reconstruction:
 
 ---
 
-## 9. Training and engineering notes
+## 9. Training
 
 ### 9.1 Regularization
 - Data augmentation (flip, crop, color jitter; MixUp/CutMix)
