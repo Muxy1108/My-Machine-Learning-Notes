@@ -153,7 +153,7 @@ LSTM maintains:
 This separation makes long-range credit assignment easier.
 
 ### 1.1 Equations
-Given input *x* at time *t*, previous states $*h*_{t-1}$, $*c*_{t-1}$:  
+Given input *x* at time *t*, previous states $h_{t-1}$, $c_{t-1}$:  
 
 $$f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)$$
 $$i_t = \sigma(W_i [h_{t-1}, x_t] + b_i)$$
