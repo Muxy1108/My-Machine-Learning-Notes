@@ -146,7 +146,9 @@ Learns offsets for sampling positions; better for geometric variations.
 
 ### 7.3 ResNet
 Core idea:
-$y = F(x) + x$
+$H(X) = F(x) + x$
+
+A **skip connection** is added.
 
 Benefits:
 - Enables very deep networks
