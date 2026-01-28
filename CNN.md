@@ -37,7 +37,7 @@ Adds nonlinearity.
 
 - *Sigmoid,Tanh*
 - ReLU: $\mathrm{ReLU}(x)=\max(0,x)\$
-- GELU：$\mathrm{GELU}(x)=x\,\Phi(x)$
+- GELU：$\mathrm{GELU}(x)=x\cdot\Phi(x)$
 
 ### 3.3 Normalization
 Common in CNNs to stabilize and accelerate training.
